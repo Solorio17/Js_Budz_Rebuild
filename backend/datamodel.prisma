@@ -1,0 +1,11 @@
+type BudType{
+    id: ID! @unique
+    budStrain: String!
+    budType: String!
+    budTHC: String!
+    budCBD: String!
+    budImage: String!
+    budGramPrice: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
