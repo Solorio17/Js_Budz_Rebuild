@@ -1,2 +1,7 @@
 /node_modules
 /bin
+.env
+/src/generated
+prisma
+prisma.cmd
+.vscode
