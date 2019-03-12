@@ -1,0 +1,17 @@
+type Query{
+    budList: [BudType!]!
+}
+
+type Mutation{
+    createBud(budStrain: String!, budType: String!, budTHC: String!, budCBD: String!, budImage: String!, budGramPrice: Int!): BudType!
+}
+
+type BudType{
+    id: ID!
+    budStrain: String!
+    budType: String!
+    budTHC: String!
+    budCBD: String!
+    budImage: String!
+    budGramPrice: Int!
+}
