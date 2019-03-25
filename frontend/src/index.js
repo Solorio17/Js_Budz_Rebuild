@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import { BrowserRouter as Router, Switch} from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Home from './Home';
 import Budz from './Budz';
