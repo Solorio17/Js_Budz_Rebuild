@@ -17,7 +17,7 @@ const Query = gql`
 `;
 
 
-class App extends Component{
+class Budz extends Component{
   render(){
     const {data: {loading, budList}} = this.props;
     if(loading){
@@ -50,4 +50,4 @@ class App extends Component{
   }
 }
 
-export default graphql(Query)(App);
+export default graphql(Query)(Budz);
