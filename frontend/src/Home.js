@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import './styles/styles.css'
 
 class Home extends Component{
   render(){
     return(
-      <h1>HELLO</h1>
+      <div className="mainHomeContainer">
+      </div>
     )
   }
 }
 
-export default (Home);
+export default Home;
