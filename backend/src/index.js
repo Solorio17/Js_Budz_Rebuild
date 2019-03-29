@@ -1,7 +1,7 @@
 const { GraphQLServer} = require('graphql-yoga');
-const { prisma } = require('./generated/prisma-client');
 const Mutation = require('./resolvers/Mutation');
 const Query = require('./resolvers/Query');
+const db = require('./db');
 require('dotenv').config({path: 'variables.env'});
 
 const server = new GraphQLServer({
@@ -10,7 +10,7 @@ const server = new GraphQLServer({
         Mutation: Mutation,
         Query: Query
     },
-    context: {prisma}
+    context: req => ({ ...req, db })
 })
 
 server.start(() => console.log(`Server is running on port http://localhost:4000`))
