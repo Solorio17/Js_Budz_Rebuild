@@ -3,6 +3,137 @@ body{
   }
 
 .mainHomeContainer{
-    height: 100vh;
-    background-color: coral;
+  height: 100vh;
+  background-color: coral;
 }
+
+#ow-card{
+  grid-area: card;
+  margin: 30px;
+  border: 1px solid #317519;
+  border-radius: 0%
+}
+
+#ow-cardBody{
+  background-color: #86e890;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#ow-img{
+  border-radius: 0%
+}
+
+#ow-cardTitle{
+  font-family: 'Nixie One', cursive;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #637267;
+
+}
+
+#ow-cardTitle2{
+  padding-bottom: 20px;
+  font-family: 'Nixie One', cursive;
+  font-weight: bold;
+  text-transform: capitalize;
+  color:#637267;
+}
+
+#strain{
+  font-size: 13px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: black
+}
+
+#type{
+  font-size: 13px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: black
+}
+
+#thc{
+  display: block;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#ow-cardTextTHC{
+  display: inline-block;
+  padding-right: 40px;
+  font-size: 32px;
+  font-family: 'Russo One', sans-serif;
+}
+
+#cbd{
+  display: block;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+#ow-cardTextCBD{
+  display: inline-block;
+  font-size: 32px;
+  font-family: 'Russo One', sans-serif;
+  padding-bottom: 20px;
+}
+
+
+.edit{
+  display: inline-block;
+  text-align: left;
+  margin-right: 10px;
+}
+
+.delete{
+  display: inline-block;
+  margin-right: 50px;
+}
+
+
+#price{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px
+}
+
+#ow-cardTextPrice{
+  text-align: right;
+  font-family: 'Russo One', sans-serif;
+  display: inline-block;
+}
+
+
+.cardContainer{
+  background-color: #9eefa6
+}
+
+#editButton{
+  width: 100%
+}
+
+#formContainer{
+  padding: 20px
+}
+
+@media(max-width: 480px){
+  div.cardContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'card'
+  }
+}
+
+@media(max-width: 768px){
+  .cardContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'card card'
+  }
+
+}
+
