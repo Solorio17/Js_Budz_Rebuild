@@ -4,12 +4,16 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import Home from './Home';
-import Budz from './Budz';
+import Home from './components/Home';
+import Budz from './components/Budz';
+import CreateBud from './components/CreateBudz';
+import SingleBud from './components/SingleBud';
+
 
 const client = new ApolloClient({
     uri: 'http://localhost:4000'
 })
+
 
 class App extends Component {
     render(){
@@ -25,6 +29,16 @@ class App extends Component {
               <Route path="/budz" exact render={
                   ()=>{
                     return (<Budz /> );
+                  }
+                }/>
+              <Route path="/createBudz" exact render={
+                  ()=>{
+                    return (<CreateBud /> );
+                  }
+                }/>
+              <Route path="/singleBud" exact render={
+                  ()=>{
+                    return (<SingleBud /> );
                   }
                 }/>
               <Route render={() => { return (<h3>Route not found!</h3>)}}/>
