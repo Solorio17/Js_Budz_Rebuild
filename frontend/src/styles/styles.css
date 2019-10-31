@@ -7,6 +7,24 @@ body{
   background-color: coral;
 }
 
+.mainHomeContainer div{
+  background: rgba(0,0,0,0.4);
+  display: inline-block;
+  width: 47%;
+  height: 200px;
+  text-align: center;
+  margin: 5px;
+  color: black;
+}
+
+.mainHomeContainer div a{
+  color: black
+}
+
+.mainHomeContainer div a:hover{
+  cursor: pointer;
+}
+
 #ow-card{
   grid-area: card;
   margin: 30px;
