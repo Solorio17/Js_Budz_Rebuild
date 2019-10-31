@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Mutation, Query } from 'react-apollo';
 import '../styles/styles.css'
+import './scripts'
 
 const SINGLE_BUD_QUERY= gql`
     query SINGLE_BUD_QUERY($id: ID!){
@@ -48,7 +49,41 @@ const UPDATE_BUD_MUTATION = gql`
     }
 `;
 
+// function myFunction() {
+//     var button = document.getElementById("editButton");
+//     var icon = document.getElementById("icon")
+//     if(!button.classList.contains("collapsed")){
+//         icon.classList.remove('fas fa-arrow-down');
+//         icon.classList.add('fas fa-arrow-up')
+//     }
+// }
+
+// myFunction()
+
+
+
 class UpdateBud extends Component{
+
+    componentDidMount(){
+
+        const $ = window.$;
+
+        $(document).ready(function(){
+            var tes = document.getElementById('editButton');
+            var ico = document.getElementById('icon');
+            
+            $(tes).click(function(){
+                // alert('Hello')
+
+                // $(ico).removeClass('fas fa-arrow-down');
+                // setTimeout(function(){
+                //     $(ico).addClass('fas fa-arrow-up')
+                // }, 10)
+
+                $(ico).toggleClass('fas fa-arrow-down fas fa-arrow-up')
+            })
+        });
+    }
   
     handleChange = e => {
         const { name, type, value } = e.target;
@@ -67,7 +102,8 @@ class UpdateBud extends Component{
                 ...this.state
             }
         })
-        console.log('Updated Bud!')
+        console.log('Updated Bud Successfully')
+        return res
     }
 
 
@@ -87,21 +123,22 @@ class UpdateBud extends Component{
                     <Mutation mutation={UPDATE_BUD_MUTATION} variables={this.state}>
                         {( updateBud, {loading, error}) => (
                             <div>
-                                <button id="editButton" className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Edit
+                                <button id="editButton" className="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    EDIT <i id="icon" className="fas fa-arrow-down"></i>
                                 </button>
                                 <div className="collapse" id="collapseExample">
                                    
                                 <div className="container" id="formContainer">
+                                    <fieldset disabled={loading}>
                                     <form onSubmit={e => this.updateBud(e, updateBud)}>
                                         <div className="form-group">
-                                            <label id="inputLabel" htmlFor="budStrain">Bud Strain</label>
+                                            <label htmlFor="budStrain">Bud Strain</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
                                                 id="budStrain"
                                                 name="budStrain"
-                                                placeholder="Bud Strain"
+                                                placeholder="Ex: Blue Kush"
                                                 defaultValue={this.props.bud.budStrain}
                                                 onChange={this.handleChange}
                                                 required
@@ -114,7 +151,7 @@ class UpdateBud extends Component{
                                                 className="form-control"
                                                 id="budType"
                                                 name="budType"
-                                                placeholder="Bud Type"
+                                                placeholder="Ex: Sativa"
                                                 defaultValue={this.props.bud.budType}
                                                 onChange={this.handleChange}
                                                 required
@@ -127,7 +164,7 @@ class UpdateBud extends Component{
                                                 className="form-control"
                                                 id="budTHC"
                                                 name="budTHC"
-                                                placeholder="Bud THC%"
+                                                placeholder="Ex: 50.00%"
                                                 defaultValue={this.props.bud.budTHC}
                                                 onChange={this.handleChange}
                                                 required
@@ -140,7 +177,7 @@ class UpdateBud extends Component{
                                                 className="form-control"
                                                 id="budCBD"
                                                 name="budCBD"
-                                                placeholder="Bud CBD%"
+                                                placeholder="Ex: 40.00%"
                                                 defaultValue={this.props.bud.budCBD}
                                                 onChange={this.handleChange}
                                                 required
@@ -153,7 +190,7 @@ class UpdateBud extends Component{
                                                 className="form-control"
                                                 id="budImage"
                                                 name="budImage"
-                                                placeholder="Bud Image"
+                                                placeholder="Ex: http://www.something.com/something.jpg"
                                                 defaultValue={this.props.bud.budImage}
                                                 onChange={this.handleChange}
                                                 required
@@ -172,8 +209,9 @@ class UpdateBud extends Component{
                                                 required
                                             />
                                         </div>
-                                        <button id="editButton" className="btn btn-success" type="submit">Sav{loading ? 'ing' : 'e'} changes</button>
+                                        <button id="saveButton" className="btn" type="submit">SAV{loading ? 'ING' : 'E'} CHANGES <i id="btnIcon" className="far fa-save"></i></button>
                                     </form>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>
