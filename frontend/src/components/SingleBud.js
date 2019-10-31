@@ -4,6 +4,8 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Bud from './Bud';
 import UpdateBud from './UpdateBudz';
+import DeleteBud from './DeleteBudz';
+// import { Link } from 'react-router-dom';
 
 const SINGLE_BUD_QUERY = gql`
     query SINGLE_BUD_QUERY($id: ID!){
@@ -20,12 +22,6 @@ const SINGLE_BUD_QUERY = gql`
 `;
 
 class SingleBud extends Component{
-    constructor(props){
-        super(props)
-
-    }
-    
-
     render(){
 
         var getParams = function (url) {
@@ -51,11 +47,20 @@ class SingleBud extends Component{
             }}>
             {({error, loading, data}) => {
                 if(loading) return <p>Loading...</p>
-                if(!data) return <p>No item found for {this.props.id}</p>
+                if(!data) return <p>No item found for</p>
                 return(
                     <div>
                         <Bud bud={data.bud}/>
+                        <div style={{ height: '100px', textAlign: 'center'}}>PRICES WILL SHOW HERE</div>
+                        {/* <Link to={{ pathname: "/budz" }}> */}
+                            <button id="budzButton" className="btn" type="button" onClick={() => {
+                                setTimeout(function(){
+                                    return window.location.replace('/budz')
+                                }, 1000)
+                            }}>RETURN TO ALL BUDZ <i id="btnIcon" className="fas fa-undo"></i></button>
+                        {/* </Link> */}
                         <UpdateBud bud={data.bud}/>
+                        <DeleteBud id={url.id}/>
                     </div>
                 )
             }}
