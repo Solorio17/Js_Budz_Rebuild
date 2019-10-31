@@ -1,13 +1,18 @@
+# import * from './generated/prisma.graphql'
+
 type Query{
     budList: [BudType!]!
+    bud(where: BudTypeWhereUniqueInput!): BudType
 }
 
 type Mutation{
     createBud(budStrain: String!, budType: String!, budTHC: String!, budCBD: String!, budImage: String!, budGramPrice: Int!): BudType!
+    deleteBud(where: BudTypeWhereUniqueInput!): BudType
+    updateBud(id: ID!, budStrain: String, budType: String, budTHC: String, budCBD: String, budImage: String, budGramPrice: Int): BudType!
 }
 
 type BudType{
-    id: ID!
+    id: ID! 
     budStrain: String!
     budType: String!
     budTHC: String!
