@@ -5,7 +5,19 @@ class Home extends Component{
   render(){
     return(
       <div className="mainHomeContainer">
-        <a href="/budz">Budz</a>
+
+        <div>
+          <a href="/budz">Budz</a>
+        </div>
+        <div>
+          <a href="/dabz">Dabz</a>
+        </div>
+        <div>
+          <a href="/ediblez">Ediblez</a>
+        </div>
+        <div>
+          <a href="/accessoriez">Accessoriez</a>
+        </div>
       </div>
     )
   }
