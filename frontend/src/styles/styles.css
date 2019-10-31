@@ -92,6 +92,16 @@ body{
   margin-right: 50px;
 }
 
+#icon{
+  padding-left: 7px;
+}
+#btnIcon{
+  padding-left: 7px;
+}
+
+#viewMore{
+  margin-right: 40px 
+}
 
 #price{
   font-family: 'Montserrat', sans-serif;
@@ -110,9 +120,42 @@ body{
   background-color: #9eefa6
 }
 
-#editButton{
-  width: 100%
+#createButton{
+  width: 100%;
+  background-color: #f47442;
+  color: white;
 }
+#editButton{
+  width: 100%;
+  background-color: #1552c4;
+  color: white;
+}
+#saveButton{
+  width: 100%;
+  background-color: #0d9123;
+  color: white;
+}
+#deleteButton{
+  width: 100%;
+  background-color: #c41414;
+  color: white;
+}
+#budzButton{
+  background-color: #5c0e91;
+  width: 100%;
+  color: white;
+}
+
+#editButton:hover{
+  cursor: pointer;
+}
+#deleteButton:hover{
+  cursor: pointer;
+}
+#budzButton:hover{
+  cursor: pointer;
+}
+
 
 #formContainer{
   padding: 20px
